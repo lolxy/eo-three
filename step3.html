@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title></title>
+<link href="css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script>
+//页面loading加载 获取浏览器页面可见高度和宽度  
+var _PageHeight = document.documentElement.clientHeight,  
+	_PageWidth = document.documentElement.clientWidth;  
+var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,  
+	_LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;  
+//在页面未加载完毕之前显示的loading Html自定义内容  
+var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#ffffff;z-index:100000;"><div style="position: absolute; cursor: wait;left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height:48px; padding-left: 80px; padding-right: 5px; background:url(images/loading.gif) no-repeat scroll 40px 10px #ffffff;color: #7bb52c; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';  
+//呈现loading效果  
+document.write(_LoadingHtml);    
+
+//监听加载状态改变  
+document.onreadystatechange = completeLoading;  
+
+//加载状态为complete时移除loading效果  
+function completeLoading() {  
+	if (document.readyState == "complete") {  
+		var loadingMask = document.getElementById('loadingDiv');  
+		loadingMask.parentNode.removeChild(loadingMask);  
+	}  
+}
+</script>
+</head>
+<body>
+<div class="wrapper pos-r">
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<img src="images/p3001.jpg" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico1">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<img src="images/p3002.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico2">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<img src="images/p3003.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico3">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<img src="images/p3004.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico4">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s"/>
+                </div>
+            </div>
+            <div class="swiper-slide">
+            	<img src="images/p3005.jpg" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <!--判断是否是会员-->
+                <div class="caozuobox">
+                    <div class="huiyuanbox">
+                            <div class="year dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">12</div>
+                            <div class="month dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">07</div>
+                            <div class="day dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">15</div>
+                            <div class="number dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
+                            <div class="btnbox">
+                            	<!--系统自动判断是否是会员，如果是，跳转到下一个页面 setp4.html 如果不是，直接弹出注册弹窗，然后点击注册按钮跳转到注册页面。-->
+                                <a href="javascript:void(0);" id="panduanbtn">
+                                    <img src="images/panduan.jpg" alt="" class="img-responsive ani" swiper-animate-effect="rotateInDownUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                                </a>
+                            </div>
+                    </div>
+                    
+                    <!--注册弹窗-->
+                    <div class="registerbox ani" swiper-animate-effect="zoomInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                            <div class="numbers dingwei ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0s">100</div>
+                            <div class="btnbox">
+                                <a href="#">
+                                    <img src="images/zhuce.jpg" alt="" class="img-responsive ani" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                                </a>
+                            </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+var obj=window.parent;
+//获取值
+$(".number").text(obj.totalCustomer);
+$(".numbers").text(obj.userThreeYear.joinDec);
+
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    direction: 'vertical',
+	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		swiperAnimateCache(swiper); //隐藏动画元素 
+		swiperAnimate(swiper); //初始化完成开始动画
+    }, 
+	onSlideChangeStart:function(){
+		if(swiper.activeIndex!=4){
+			$(".caozuobox").hide();
+		}
+	},
+    onSlideChangeEnd: function(swiper){ 
+		swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		if(swiper.activeIndex==4){
+			setTimeout(function(){$(".caozuobox").show();},2000);
+		}
+   } 
+});
+
+$('.downicon').click(function(){
+	swiper.slideNext();
+})
+
+$("#panduanbtn").click(function(){
+	if(!obj.userThreeYear){
+	$('.huiyuanbox').hide();
+	$('.registerbox').show();
+	}else{
+		window.location.href="step4.html";
+		}
+});
+</script>
+</body>
+</html>

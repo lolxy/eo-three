@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title></title>
+<link href="css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/html5media.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+//页面loading加载 获取浏览器页面可见高度和宽度  
+var _PageHeight = document.documentElement.clientHeight,  
+	_PageWidth = document.documentElement.clientWidth;  
+var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,  
+	_LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;  
+//在页面未加载完毕之前显示的loading Html自定义内容  
+var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#ffffff;z-index:100000;"><div style="position: absolute; cursor: wait;left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height:48px; padding-left: 80px; padding-right: 5px; background:url(images/loading.gif) no-repeat scroll 40px 10px #ffffff;color: #7bb52c; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';  
+//呈现loading效果  
+document.write(_LoadingHtml);    
+
+//监听加载状态改变  
+document.onreadystatechange = completeLoading;  
+
+//加载状态为complete时移除loading效果  
+function completeLoading() {  
+	if (document.readyState == "complete") {  
+		var loadingMask = document.getElementById('loadingDiv');  
+		loadingMask.parentNode.removeChild(loadingMask);  
+	}  
+}
+</script>
+</head>
+<body>
+<div class="wrapper pos-r">
+    <div class="step1 stepbox">
+        <div class="downtimebox bounceInDown animated">
+            <img src="images/downtime.gif" alt="" class="img-responsive"/>
+        </div>
+        <div class="downpage bounceInDown animated">
+        	<img src="images/down.gif" alt="" class="img-responsive"/>
+        </div>
+    </div>
+    <div class="step2 stepbox">
+       <video id="videoPlay" webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" x-webkit-airplay="allow" x5-video-orientation="portraint" style="object-fit:fill">
+              <source src="video/video.mp4" type="video/mp4">
+              <source src="video/video.webm" type="video/webm">
+              Your browser does not support the <code>video</code> element.
+       </video>
+    </div>
+</div>
+<script src="js/iphone-inline-video.min.js"></script>
+<script src="js/touch.min.js"></script>
+<script src="js/jweixin-1.0.0.js"></script> 
+<script>
+var expand = document.querySelector("#videoPlay"); 
+expand.addEventListener("ended",function(){ 
+	window.location.href="step2.html";
+});
+
+touch.on(".step1","swipeup",function(){
+	$(".step1").hide();
+	$(".step2").fadeIn();
+	expand.play();	
+});
+
+document.addEventListener("WeixinJSBridgeReady", function () { 
+	document.getElementById('videoPlay').play();  
+}, false); 
+
+$(".downpage").click(function(){
+	$(".step1").hide();
+	$(".step2").fadeIn();
+	expand.play();	
+});
+
+setTimeout(function(){
+	$(".downpage").show();
+	},14000);
+</script>
+</body>
+</html>

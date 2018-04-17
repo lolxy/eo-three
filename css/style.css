@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+*{-webkit-tap-highlight-color:none}
+html,body{height: 100%;overflow: hidden;}
+.stepbox{width: 100%;height: 100%;overflow: hidden;}
+.hcss{height: 100%;}
+.stepbox .downtimebox{position:absolute;width: 100%;height: 100%;overflow: hidden;z-index:1;}
+.stepbox .downpage{position:absolute;width: 0.9rem;height: 0.74rem;z-index:2;top: 50%;margin-top: 6rem;left: 50%;margin-left: -0.45rem;display:none;}
+video#videoPlay{position:absolute;top:0;left: 0;width:100%;height: 100%;z-index:-1}
+
+.swiper-container {width: 100%;height: 100%;}
+.swiper-slide {text-align: center;background: #fff;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+
+.caozuobox{position:absolute;width: 100%;height: 100%;background-color: #fff;top: 0;left: 0;display:none;}
+.huiyuanbox{position:absolute;height: 11.6rem;width: 100%;background: url(../images/p30051.jpg) center center no-repeat; background-size:contain;top: 50%;margin-top: -5.8rem;}
+.dingwei{position:absolute;font-family: sans-serif;font-size: 0.7rem;display: block;text-align: center;overflow: hidden;color:#7bb52c;}
+.huiyuanbox .year{top: 2.35rem;left: 1.6rem;min-width: 1rem;}
+.huiyuanbox .month{top: 2.35rem;left: 3.35rem;min-width: 1rem;}
+.huiyuanbox .day{top: 2.35rem;left: 4.9rem;min-width: 1rem;}
+.huiyuanbox .number{top: 3.65rem;left: 4.5rem;min-width: 4rem;}
+.huiyuanbox .btnbox{width: 5.24rem;height: 1.44rem;overflow: hidden;margin: 0 auto;position:absolute;bottom: 1rem;left: 50%;margin-left: -2.62rem;text-align: center;}
+.huiyuanbox .btnbox a{width: 5.24rem;height: 1.44rem;display:block;}
+
+.registerbox{position:absolute;height: 11.6rem;width: 100%;background: url(../images/p30052.jpg) center center no-repeat; background-size:contain;top: 50%;margin-top: -5.8rem;display:none;}
+.registerbox .btnbox{width: 4.16rem;height: 1.44rem;overflow: hidden;margin: 0 auto;position:absolute;bottom: 1rem;left: 50%;margin-left: -2.08rem;}
+.registerbox .numbers{top: 4.65rem;left: 5.6rem;width: 3.5rem;}
+
+.downicon{position:absolute;top: 50%;width: 0.9rem;height: 0.8rem;padding: 1.5rem;}
+.downicon.dico1{margin-top: 7.5rem;right: 0rem;}
+.downicon.dico2{margin-top: 7.8rem;right: 0rem;}
+.downicon.dico02{margin-top: 8rem;right: 0rem;padding-right: 2.5rem;z-index:9999}
+.downicon.dico3{margin-top: 8.5rem;right: 0rem;}
+.downicon.dico4{margin-top: 8rem;right: 0rem;}
+
+.yyicon{position:absolute;width: 4.5rem;height: 4.5rem;top: 50%;left: 50%;margin-top: -3.8rem;margin-left: -1.5rem;}
+
+.year1{min-width: 2rem;margin-top: 4.45rem;left: 3.9rem;font-size: 0.8rem;top: 50%;}
+.month1{margin-top: 4.45rem;left:6.82rem;font-size: 0.8rem;top: 50%;min-width: 1rem;}
+.day1{margin-top: 4.45rem;left: 8.7rem;font-size: 0.8rem;top: 50%;min-width: 1rem;}
+.num1{margin-top: 5.85rem;left: 6.5rem;font-size: 0.8rem;top: 50%;min-width: 4rem;}
+.parent1{margin-top: 7.12rem;left: 2.5rem;font-size: 0.8rem;top: 50%;min-width: 2rem;}
+
+.swiper-slide .box{position:absolute;left: 0;width: 100%;height:6.4rem}
+.swiper-slide .box .dingwei,.txtbox .dingwei{font-size: 0.7rem;}
+.swiper-slide .box1{top:1.8rem;}
+.swiper-slide .box1 .yuan{top: 50%;left: 7.4rem;margin-top: -2.23rem;min-width:3.6rem}
+.swiper-slide .box1 .can{top:50%;left: 6rem;margin-top: -1.1rem;min-width:2rem}
+.swiper-slide .box1 .count{top:50%;left: 2.75rem;margin-top: -0.12rem;min-width:2rem}
+.swiper-slide .box1 .dianming{top:50%;left: 8.8rem;margin-top:-0.12rem;min-width:4rem}
+.swiper-slide .box2{top: 12.5rem;}
+.swiper-slide .box2 .year{top:50%;margin-top: -6.6rem;left: 4.6rem;}
+.swiper-slide .box2 .month{top:50%;margin-top: -6.6rem;left: 7rem;}
+.swiper-slide .box2 .day{top:50%;margin-top: -6.6rem;left: 8.6rem;}
+.swiper-slide .box2 .yuan{top:50%;margin-top: -5.4rem;left: 7rem;}
+
+#main{position:absolute;width: 60%;height:4rem;top: 7.2rem;left:20%;}
+#main1{position:absolute;width: 80%;height:7rem;top: 15rem;left:10%; text-align:-webkit-center;}
+
+.txtbox{position:absolute;left: 0;width: 100%;height:8rem;top: 2rem;}
+.txtbox .liaoli{top:50%;left: 9rem;margin-top: -2.8rem;max-width:4.5rem;}
+.txtbox .chi{top:50%;left: 7.3rem;margin-top: -1.6rem;min-width:2rem}
+.txtbox .zhong{top:50%;left: 9rem;margin-top: -0.4rem;min-width:2rem}
+.txtbox .ke{top:50%;left: 6.6rem;margin-top: 0.8rem;min-width:2.8rem}
+
+.dongwu{position:absolute;bottom: 0;width: 90%;left:50%;margin-left: -45%;}

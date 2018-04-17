@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title></title>
+<link href="css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script>
+//页面loading加载 获取浏览器页面可见高度和宽度  
+var _PageHeight = document.documentElement.clientHeight,  
+	_PageWidth = document.documentElement.clientWidth;  
+var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,  
+	_LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;  
+//在页面未加载完毕之前显示的loading Html自定义内容  
+var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#ffffff;z-index:100000;"><div style="position: absolute; cursor: wait;left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height:48px; padding-left: 80px; padding-right: 5px; background:url(images/loading.gif) no-repeat scroll 40px 10px #ffffff;color: #7bb52c; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';  
+//呈现loading效果  
+document.write(_LoadingHtml);    
+
+//监听加载状态改变  
+document.onreadystatechange = completeLoading;  
+
+//加载状态为complete时移除loading效果  
+function completeLoading() {  
+	if (document.readyState == "complete") {  
+		var loadingMask = document.getElementById('loadingDiv');  
+		loadingMask.parentNode.removeChild(loadingMask);  
+	}  
+}
+</script>
+</head>
+<body onload="init()">
+<div class="wrapper pos-r">
+	<div class="yaoyiyao animated zoomInUp">
+    	<img src="images/p003s.jpg" alt="" class="img-responsive" id="animatebox"/>
+    </div>
+    <div class="yyicon animated zoomInRight">
+    	<img src="images/yaoyiyao.gif" alt="" class="img-responsive"/>
+    </div>
+</div>
+<script>
+var SHAKE_THRESHOLD = 3000;  
+var last_update = 0; 
+var status; 
+var x = y = z = last_x = last_y = last_z = 0;  
+function init() {  
+	if (window.DeviceMotionEvent) {  
+		window.addEventListener('devicemotion', deviceMotionHandler, false);  
+	} else {  
+		alert('not support mobile event');  
+	}  
+}  
+function deviceMotionHandler(eventData) {  
+	var acceleration = eventData.accelerationIncludingGravity;  
+	var curTime = new Date().getTime();  
+	if ((curTime - last_update) > 50) {  
+		var diffTime = curTime - last_update;  
+		last_update = curTime;  
+		x = acceleration.x;  
+		y = acceleration.y;  
+		z = acceleration.z;  
+		var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;  
+
+		if (speed > SHAKE_THRESHOLD) { 
+			vibration();
+			if(status!=1){
+			status=1;
+			$("#animatebox").attr("src","images/p003d.gif");
+			}
+			setTimeout(function(){ 
+			window.location.href="step3.html";
+			},3000);
+		}  
+		last_x = x;  
+		last_y = y;  
+		last_z = z;  
+	}  
+}  
+
+//Vibration接口用于在浏览器中发出命令，使得设备振动。
+function vibration(){
+   navigator.vibrate = navigator.vibrate
+		   || navigator.webkitVibrate
+		   || navigator.mozVibrate
+		   || navigator.msVibrate;
+
+   if (navigator.vibrate) {
+	   // 支持
+	   console.log("支持设备震动！");
+	   navigator.vibrate([300, 300, 400,300]);
+   }else{
+	   return true
+	   }
+}
+</script>
+</body>
+</html>

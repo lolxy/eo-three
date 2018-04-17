@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title></title>
+<link href="css/base.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script>
+//页面loading加载 获取浏览器页面可见高度和宽度  
+var _PageHeight = document.documentElement.clientHeight,  
+	_PageWidth = document.documentElement.clientWidth;  
+var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,  
+	_LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;  
+//在页面未加载完毕之前显示的loading Html自定义内容  
+var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#ffffff;z-index:100000;"><div style="position: absolute; cursor: wait;left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height:48px; padding-left: 80px; padding-right: 5px; background:url(images/loading.gif) no-repeat scroll 40px 10px #ffffff;color: #7bb52c; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';  
+//呈现loading效果  
+document.write(_LoadingHtml);   
+
+//监听加载状态改变  
+document.onreadystatechange = completeLoading;  
+
+//加载状态为complete时移除loading效果  
+function completeLoading() {  
+	if (document.readyState == "complete") {  
+		var loadingMask = document.getElementById('loadingDiv');  
+		loadingMask.parentNode.removeChild(loadingMask);  
+	}  
+}
+</script>
+</head>
+<body>
+<div class="wrapper pos-r">
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+        	<!--已注册会员跳转到本页，展示对应的数据-->
+            <div class="swiper-slide">
+            	<img src="images/p004.jpg" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico1">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"/>
+                </div>
+                <!--数据展示-->
+                <div class="year1 dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+                <div class="month1 dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+                <div class="day1 dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+                <div class="num1 dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+                <div class="parent1 dingwei ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"></div>
+            </div>
+            
+            <!--数据报表展示页面-->
+            <div class="swiper-slide">
+            	<img src="images/p005.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="downicon dico02">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"/>
+                </div>
+                <!--数据展示-->
+                <div class="box1 box ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                    <div class="yuan dingwei"></div>
+                    <div class="can dingwei"></div>
+                    <div class="count dingwei"></div>
+                    <div class="dianming dingwei"></div>
+                </div>
+                
+                <!--数据展示-->
+                <div class="box2 box ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<div class="year dingwei">2017</div>
+                    <div class="month dingwei">12</div>
+                    <div class="day dingwei">22</div>
+                    <div class="yuan dingwei">22222</div>
+                </div>
+                
+                <!--饼形报表-->
+                <div id="main1" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"></div>
+            </div>
+            
+            <!--动物页面 6个根据不同情况判断只展示其中一个-->
+            <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <!--数据展示-->
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei"></div>
+                    <div class="chi dingwei"></div>
+                    <div class="zhong dingwei"></div>
+                    <div class="ke dingwei"></div>
+                </div>
+               	<!--动物数据-->
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw1.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+                <div class="downicon dico02">
+                	<img src="images/down.gif" alt="" class="img-responsive ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"/>
+                </div>
+            </div>
+            
+           <!-- <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei">料理</div>
+                    <div class="chi dingwei">5</div>
+                    <div class="zhong dingwei">8</div>
+                    <div class="ke dingwei">900</div>
+                </div>
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw2.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei">料理</div>
+                    <div class="chi dingwei">5</div>
+                    <div class="zhong dingwei">8</div>
+                    <div class="ke dingwei">900</div>
+                </div>
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw3.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei">料理</div>
+                    <div class="chi dingwei">5</div>
+                    <div class="zhong dingwei">8</div>
+                    <div class="ke dingwei">900</div>
+                </div>
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw4.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei">料理</div>
+                    <div class="chi dingwei">5</div>
+                    <div class="zhong dingwei">8</div>
+                    <div class="ke dingwei">900</div>
+                </div>
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw5.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+            	<img src="images/p006.jpg" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                <div class="txtbox ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                	<div class="liaoli dingwei">料理</div>
+                    <div class="chi dingwei">5</div>
+                    <div class="zhong dingwei">8</div>
+                    <div class="ke dingwei">900</div>
+                </div>
+                <div class="dongwu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+                	<img src="images/dw6.png" alt="" class="img-responsive ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+                </div>
+            </div>-->
+            
+            <!--结束页面-->
+            <div class="swiper-slide">
+            	<img src="images/p007.gif" alt="" class="img-responsive hcss ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0s"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<script src="js/chart.js"></script>
+<script>
+//获取值
+var obj=window.parent;
+var time=obj.userThreeYear.joinTime;
+var s1=time.split(" ",1);
+var y=s1[0].split("-");
+$(".year1").text(y[0]);
+$(".month1").text(y[1]);
+$(".day1").text(y[2]);
+$(".num1").text(obj.userThreeYear.joinDec);
+var parent=Math.round((1-obj.userThreeYear.joinDec/obj.totalCustomer)*100);
+$(".parent1").text(parent);
+
+$(".box1 .yuan").text(obj.userThreeYear.amount);
+$(".box1 .can").text(obj.userThreeYear.numOrders);
+$(".box1 .count").text(obj.userThreeYear.consumerStores[0].numOrders);
+$(".box1 .dianming").text(obj.userThreeYear.consumerStores[0].storeName);
+
+$(".liaoli").text(obj.userThreeYear.likeProduct);
+$(".chi").text(obj.userThreeYear.likeProductNum);
+$(".zhong").text(obj.userThreeYear.varietyVegetables);
+$(".ke").text(obj.userThreeYear.varietyWeight);
+
+switch(obj.userThreeYear.animals)
+{
+case "猪":
+  $(".dongwu img").attr("src","images/dw1.png");
+  break;
+case "猴":
+  $(".dongwu img").attr("src","images/dw2.png");
+  break;
+case "羊":
+  $(".dongwu img").attr("src","images/dw3.png");
+  break;
+case "猫":
+  $(".dongwu img").attr("src","images/dw6.png");
+  break;
+case "豹":
+ $(".dongwu img").attr("src","images/dw5.png");
+  break;
+default:
+ $(".dongwu img").attr("src","images/dw4.png");
+}
+
+var toptime=obj.userThreeYear.topTime;
+var ts1=time.split(" ",1);
+var ty=ts1[0].split("-");
+$(".box2 .year").text(ty[0]);
+$(".box2 .month").text(ty[1]);
+$(".box2 .day").text(ty[2]);
+$(".box2 .yuan").text(obj.userThreeYear.topAmount);
+
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    direction: 'vertical',
+	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		swiperAnimateCache(swiper); //隐藏动画元素 
+		swiperAnimate(swiper); //初始化完成开始动画
+    }, 
+    onSlideChangeEnd: function(swiper){ 
+		swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+   } 
+});
+
+//userThreeYear.numOrders==0 跳转到尾页
+if(obj.userThreeYear.numOrders==0){
+	var swiper = new Swiper('.swiper-container', {
+		direction: 'vertical',
+		initialSlide :3,
+		allowSwipeToPrev : false
+	});	
+}
+
+$('.downicon').click(function(){
+	swiper.slideNext();
+});
+
+//获取柱状图
+/*var myChart = echarts.init(document.getElementById('main')); 
+
+var xdata = new Array();
+var ydata = new Array();
+var zdata = new Array();
+var lengths = obj.userThreeYear.consumerStores.length;
+for(var i=0;i<lengths;i++)
+{
+  xdata[i]=obj.userThreeYear.consumerStores[i].storeName;
+  ydata[i]=obj.userThreeYear.consumerStores[i].numOrders;
+  if(i==0){
+ 	 zdata[i]="#7bb52b";
+  }else{
+	 zdata[i]="#ffffff"; 
+  }
+}
+
+var option = {
+    xAxis : [
+        {
+            type : 'category',
+            data : xdata,
+			splitLine:{show:false},
+			axisLabel:{show:false},
+			axisLine:{show:false},
+        },
+    ],
+    yAxis : [
+        {
+            type : 'value',
+			splitLine:{show:false},
+			axisLabel:{show:false},
+			axisLine:{show:false},
+		}
+    ],
+	grid:
+	{x:20,
+	y:0,
+	x2:20,
+	y2:0,
+	borderWidth:0},
+    series : [
+        {
+            type:'bar',
+            data:ydata,
+			itemStyle:{
+				normal:{
+					color: function (params){
+                        var colorList = zdata;
+                        return colorList[params.dataIndex];
+                    },
+					barBorderColor:'#000000',
+					barBorderWidth:2,
+				},
+				emphasis: {
+					color:'#7bb52b',
+				}
+			},
+        },
+    ]
+};                 
+
+// 为echarts对象加载数据 
+myChart.setOption(option); */
+
+//获取饼图
+
+var myChart1 = echarts.init(document.getElementById('main1')); 
+
+var data1 = new Array();
+var zdata1 = new Array();
+var lengths1 = obj.userThreeYear.consumerCategory.length;
+for(var j=0;j<lengths1;j++)
+{
+  data1[j]={value:obj.userThreeYear.consumerCategory[j].numOrders, name:obj.userThreeYear.consumerCategory[j].categoryName};
+  if(j==0){
+ 	 zdata1[j]="#7bb52b";
+  }else{
+	 zdata1[j]="#ffffff"; 
+  }
+}
+
+var option1 = {
+    series : [
+        {
+            type:'pie',
+			selectedMode: 'single', //单一选中模式 
+            radius : '60%',
+            center: ['50%', '50%'],
+			selectedOffset:5,
+            data:data1,
+			itemStyle:{
+				normal:{
+					color: function (params){
+                        var colorList = zdata1;
+                        return colorList[params.dataIndex];
+                    },
+					borderColor:'#000000',
+					borderWidth:2,
+					label : {
+                        formatter : function (params) {                        
+                          return params.name+(params.percent - 0).toFixed(0) + '%'
+                        }
+                    }
+				},
+				emphasis: {
+					color:'#7bb52b',
+				}
+			},
+        }
+    ]
+};
+
+myChart1.setOption(option1);
+</script>
+</body>
+</html>
